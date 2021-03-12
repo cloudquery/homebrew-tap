@@ -5,16 +5,16 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "0.11.5"
+  version "0.11.6"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/cloudquery/cloudquery/releases/download/v0.11.5/cloudquery_Darwin_x86_64.zip"
-    sha256 "f5ae144397d4ea3578e3019788450aaa5315f2e79e24ffd20b2677889f66677f"
+    url "https://github.com/cloudquery/cloudquery/releases/download/v0.11.6/cloudquery_Darwin_x86_64.zip"
+    sha256 "4a2dfa8a3d96aca9a48d43aeee407eed43c33fef21b815a998323ded850c7093"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/cloudquery/cloudquery/releases/download/v0.11.5/cloudquery_Linux_x86_64.zip"
-    sha256 "653f1abf01845fce126077f4105ec77887e2f0d1dce127845440bd0db5f6e57c"
+    url "https://github.com/cloudquery/cloudquery/releases/download/v0.11.6/cloudquery_Linux_x86_64.zip"
+    sha256 "e6dda402f599efff3f5e9403ea0564a879e0c0d6adda77b1ab77293a466d578f"
   end
 
   def install
