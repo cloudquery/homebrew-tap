@@ -5,24 +5,33 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "0.13.4"
+  version "0.13.5"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.4/cloudquery_Darwin_x86_64.zip"
-    sha256 "969ce13301762f0a69b85e6b1cc88169485532fa253d851e694f8ee1afb1331b"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Darwin_x86_64.zip"
+      sha256 "e7e83b88622de76fbe11538c79ae8385449e9ea3e7eaa6dcf29eaec1b4c57147"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Darwin_arm64.zip"
+      sha256 "1de4f79fc4a238580b2af34865b00110e9fd4b662a679ef8eccd348305c89c52"
+    end
+
+    depends_on arch: [:x86_64, :aarch64]
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.4/cloudquery_Darwin_arm64.zip"
-    sha256 "0ccb682f8d917207a1b47f3318869e914385c00cdd6164e99e7aed7d874e4fd7"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.4/cloudquery_Linux_x86_64.zip"
-    sha256 "c04251a496c5cf15120cbc29ceabeb252fb9c1f17bf31b7e5e8390dd93c2aef8"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.4/cloudquery_Linux_arm64.zip"
-    sha256 "2e2d8251d9e1ab41e75ef887e1a2e30c7b2022b3a26a8abffa64497cef523f12"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Linux_x86_64.zip"
+      sha256 "942f67f7c46bb0811a491ce6c2db8df24cb8d773d1cbfa73e68a4e8d42fca018"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Linux_arm64.zip"
+      sha256 "1df4c8194a60afab57cb21ff4eb420a7276e97f5e09053414a40a027ef62a131"
+    end
+
+    depends_on arch: [:x86_64, :aarch64]
   end
 
   def install
