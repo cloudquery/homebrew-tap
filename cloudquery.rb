@@ -5,33 +5,29 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "0.13.5"
+  version "0.13.6"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Darwin_x86_64.zip"
-      sha256 "e7e83b88622de76fbe11538c79ae8385449e9ea3e7eaa6dcf29eaec1b4c57147"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.6/cloudquery_Darwin_x86_64.zip"
+      sha256 "71eabf2034f68254bd9ab3ea4fad1629637fb8a57a0947d25324b23132e985d2"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Darwin_arm64.zip"
-      sha256 "1de4f79fc4a238580b2af34865b00110e9fd4b662a679ef8eccd348305c89c52"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.6/cloudquery_Darwin_arm64.zip"
+      sha256 "aef47c918efd13e6dfd4eb3928c6df1b9e52fa0babf2242919ff7b986ddedd7d"
     end
-
-    depends_on arch: [:x86_64, :aarch64]
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Linux_x86_64.zip"
-      sha256 "942f67f7c46bb0811a491ce6c2db8df24cb8d773d1cbfa73e68a4e8d42fca018"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.6/cloudquery_Linux_x86_64.zip"
+      sha256 "ac999604592d5a9158a02c65df46dc3d5e1a7469dbb91bbc4da5e2b15e7221ce"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.5/cloudquery_Linux_arm64.zip"
-      sha256 "1df4c8194a60afab57cb21ff4eb420a7276e97f5e09053414a40a027ef62a131"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.13.6/cloudquery_Linux_arm64.zip"
+      sha256 "b5fe51069a27d158a193b1ff11dddeb01d8d1be5b777e283469ca7a2a94134b8"
     end
-
-    depends_on arch: [:x86_64, :aarch64]
   end
 
   def install
