@@ -5,28 +5,28 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "0.15.0"
+  version "0.15.1"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.0/cloudquery_Darwin_x86_64.zip"
-      sha256 "59133922f436ff8087611d816ad86400320ef50539bad90089c34e9bd9d5a7eb"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.1/cloudquery_Darwin_x86_64.zip"
+      sha256 "318dd565a364bc1260e8f336a35c7a846979cbd2227069917b08a300d7a6f97d"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.0/cloudquery_Darwin_arm64.zip"
-      sha256 "f8b454b252c366cc15d34068435d344b5a91398fbc946152f103705fbd3fbaf3"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.1/cloudquery_Darwin_arm64.zip"
+      sha256 "90eee188d96d5c8e8648879daa029e1aec2bf2a67d37b6a16812c7bf07d03b76"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.0/cloudquery_Linux_x86_64.zip"
-      sha256 "f9e385bab01f9686cd781b44689c2498a1a40179a494301dfc086388f1268fea"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.1/cloudquery_Linux_x86_64.zip"
+      sha256 "4ebda459c6eb1498299a72fc04563e1beb52136816c521b256a092bbedbb2654"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.0/cloudquery_Linux_arm64.zip"
-      sha256 "729fff023d226fcffe759ec730270efc9ac096642a7b29d368a2b491cf2be316"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.15.1/cloudquery_Linux_arm64.zip"
+      sha256 "ddb41c5e2564e81883d9244c4a5e5fbe1b7069a6befdfc144bde812b408e05ec"
     end
   end
 
