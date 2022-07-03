@@ -5,12 +5,12 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "0.30.4"
+  version "0.30.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.4/cloudquery_Darwin_arm64.zip"
-      sha256 "830009ff129d1017e024817c592dfb76d78f85542e3b3ca523b7727c8f9ba3d6"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.5/cloudquery_Darwin_arm64.zip"
+      sha256 "8d2bcf5f8abcfcc2df880440fd1234f03c0cf4d2a14e93f41585484e93ee8f26"
 
       def install
         bin.install "cloudquery"
@@ -23,8 +23,8 @@ class Cloudquery < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.4/cloudquery_Darwin_x86_64.zip"
-      sha256 "1c8c5d457257d258889cf85791793c509990fa6610d24a025f5d05b3f291164b"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.5/cloudquery_Darwin_x86_64.zip"
+      sha256 "a424d694cd8bc6a6a6e0fc5d44a593f9dcedd009606b71ced6d188ebab1c7d17"
 
       def install
         bin.install "cloudquery"
@@ -40,8 +40,8 @@ class Cloudquery < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.4/cloudquery_Linux_arm64.zip"
-      sha256 "74a1f954c76de204593e8556cb84c92debf51203aace534f1ddf6cd08ca0057f"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.5/cloudquery_Linux_arm64.zip"
+      sha256 "0cef5fbc582a3c41bd5b390cab45ea82a27bcd4b38b2ca7dd9f23c9d6426af67"
 
       def install
         bin.install "cloudquery"
@@ -54,8 +54,8 @@ class Cloudquery < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.4/cloudquery_Linux_x86_64.zip"
-      sha256 "39ac16e5d87826cf1e99f2c275d037932f0cead0cb8f8b8607bc82215bd3953a"
+      url "https://github.com/cloudquery/cloudquery/releases/download/v0.30.5/cloudquery_Linux_x86_64.zip"
+      sha256 "c07dddcd4b11810be1013632514e02c30e01a7bacabe45e56bbc64b98e0a583b"
 
       def install
         bin.install "cloudquery"
