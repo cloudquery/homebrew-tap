@@ -5,12 +5,12 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "2.0.4"
+  version "2.0.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.4/cloudquery_darwin_arm64.zip"
-      sha256 "4f0e9d0da45c6ed8af03354f64e5493fe8eca9c6b3287de1039fe2ec93ae4268"
+    if Hardware::CPU.intel?
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.5/cloudquery_darwin_amd64.zip"
+      sha256 "a4e1dba6521182e90c8f1f0c2701e740bd1de9358429d5838a7c8fedab07d1a5"
 
       def install
         bin.install "cloudquery"
@@ -22,9 +22,9 @@ class Cloudquery < Formula
         (fish_completion/"cloudquery.fish").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.4/cloudquery_darwin_amd64.zip"
-      sha256 "33e87381ee966f7faa160acb4ed1c2ac7d5427687743cb3f518464773c4f9ebc"
+    if Hardware::CPU.arm?
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.5/cloudquery_darwin_arm64.zip"
+      sha256 "5eca59078fe49bb77a9cc580a79366062344d55216d1057e1e34a54cf5309d48"
 
       def install
         bin.install "cloudquery"
@@ -39,9 +39,9 @@ class Cloudquery < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.4/cloudquery_linux_arm64.zip"
-      sha256 "0b72686b0e4b7bb9064a8e813cf3cf3d3db3025130d2278f9b958628a35680b2"
+    if Hardware::CPU.intel?
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.5/cloudquery_linux_amd64.zip"
+      sha256 "9ae41c22f97940b3f1055b36496b083969fa6cb4396d2d1e728e8e8cec7e98da"
 
       def install
         bin.install "cloudquery"
@@ -53,9 +53,9 @@ class Cloudquery < Formula
         (fish_completion/"cloudquery.fish").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.4/cloudquery_linux_amd64.zip"
-      sha256 "ab3cb08b826e4233cd6fdcaa5dad6e70277619ef153d5e6936a282a9f48c9b11"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v2.0.5/cloudquery_linux_arm64.zip"
+      sha256 "f8f1b4b7b6bcd766d0c2a539bcd49d8335f511428f02624f8bb6ce4742055308"
 
       def install
         bin.install "cloudquery"
