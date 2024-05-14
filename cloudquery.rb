@@ -5,12 +5,12 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "5.18.1"
+  version "5.18.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.1/cloudquery_darwin_amd64.zip"
-      sha256 "74bf1d6070c18826a8397861f859c9adabd123416b4930148dee0c2fdc2170d4"
+    on_intel do
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.2/cloudquery_darwin_amd64.zip"
+      sha256 "245015280d6c298ce2296bbdba9adf43ac0351240794a0f0fbb36bf32f8f92d4"
 
       def install
         bin.install "cloudquery"
@@ -22,9 +22,9 @@ class Cloudquery < Formula
         (fish_completion/"cloudquery.fish").write output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.1/cloudquery_darwin_arm64.zip"
-      sha256 "4ded3fe5f07156410fb2757895a53ad92208eebe351feb80e0c722c976525c60"
+    on_arm do
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.2/cloudquery_darwin_arm64.zip"
+      sha256 "933b92df694b31d3eb83edd25e02ac18c080cf3a442b71ffca68840fe79822da"
 
       def install
         bin.install "cloudquery"
@@ -39,32 +39,36 @@ class Cloudquery < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.1/cloudquery_linux_amd64.zip"
-      sha256 "dab8327615d2d46d9b9ad1aaba6ee11375e5c7fcf30381fa0353d8e1c0bd0d18"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.2/cloudquery_linux_amd64.zip"
+        sha256 "a92263602f680d8e3b4a4ae8352b7196a6eda83a71d4b42ffe0e901144b02471"
 
-      def install
-        bin.install "cloudquery"
-        output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "bash")
-        (bash_completion/"cloudquery").write output
-        output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "zsh")
-        (zsh_completion/"_cloudquery").write output
-        output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "fish")
-        (fish_completion/"cloudquery.fish").write output
+        def install
+          bin.install "cloudquery"
+          output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "bash")
+          (bash_completion/"cloudquery").write output
+          output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "zsh")
+          (zsh_completion/"_cloudquery").write output
+          output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "fish")
+          (fish_completion/"cloudquery.fish").write output
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.1/cloudquery_linux_arm64.zip"
-      sha256 "976d7dc6fc3ee07b4578a50ac370dbb9924f056c09824ec0b9eefac6e5ec9120"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/cloudquery/cloudquery/releases/download/cli-v5.18.2/cloudquery_linux_arm64.zip"
+        sha256 "ee51a670dae9b9850bc6b03e1ec5670d6f01babe531923bce95fbafae02d8247"
 
-      def install
-        bin.install "cloudquery"
-        output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "bash")
-        (bash_completion/"cloudquery").write output
-        output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "zsh")
-        (zsh_completion/"_cloudquery").write output
-        output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "fish")
-        (fish_completion/"cloudquery.fish").write output
+        def install
+          bin.install "cloudquery"
+          output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "bash")
+          (bash_completion/"cloudquery").write output
+          output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "zsh")
+          (zsh_completion/"_cloudquery").write output
+          output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "fish")
+          (fish_completion/"cloudquery.fish").write output
+        end
       end
     end
   end
