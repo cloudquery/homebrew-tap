@@ -68,4 +68,10 @@ class CloudqueryAT2025 < Formula
       end
     end
   end
+  def caveats
+    <<~EOS
+      ✅ CloudQuery installed!
+      Next: Authenticate via `cloudquery login`
+    EOS
+  end
 end
