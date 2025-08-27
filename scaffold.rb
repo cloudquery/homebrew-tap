@@ -10,7 +10,7 @@ class Scaffold < Formula
   on_macos do
     on_intel do
       url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.31/cq-scaffold_darwin_amd64.zip"
-      sha256 "cd81b16e5836303630bceda5511fb6f032d69a73273227376a98ac76eac87a82"
+      sha256 "fa6b1040957e6f0131f8458290604f62960cca288bd9d1c15e95630bfa148768"
 
       def install
         bin.install "cq-scaffold"
@@ -18,7 +18,7 @@ class Scaffold < Formula
     end
     on_arm do
       url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.31/cq-scaffold_darwin_arm64.zip"
-      sha256 "d8557dbd8f720cd883cac66f36892d7b363bc03e4bd518f548507392aaa16e9e"
+      sha256 "4a7f3d20a8f70611e62b6663e0e4589b610329de7c82247a7f2adbe369602340"
 
       def install
         bin.install "cq-scaffold"
@@ -30,7 +30,7 @@ class Scaffold < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.31/cq-scaffold_linux_amd64.zip"
-        sha256 "918bbe421dcd1c0118c93c6619b38a76364e0f3bf31810c5d914d095a008b041"
+        sha256 "170a30fea4d0a28ac3cf9904f88db2a45b3d1c44f71e772dacc11885e81f8397"
 
         def install
           bin.install "cq-scaffold"
@@ -40,7 +40,7 @@ class Scaffold < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.31/cq-scaffold_linux_arm64.zip"
-        sha256 "a064eb85f9fab11359e2c74f7a45c01ca6a239e8f0a592b660aad9b713cc5b85"
+        sha256 "bcb2a7d3d340c65a7c913a16e68aacf929064670b3eee6f9c3e2cf6825f5fd29"
 
         def install
           bin.install "cq-scaffold"
