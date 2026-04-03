@@ -5,20 +5,20 @@
 class Scaffold < Formula
   desc "Scaffold CloudQuery source and destination plugins"
   homepage "https://cloudquery.io"
-  version "3.4.44"
+  version "3.4.45"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.44/cq-scaffold_darwin_amd64.zip"
-      sha256 "bfd6f1c92ae3b86a3cd4dc9b7324247223e078a72074a4b0e6958b0efe6559c5"
+      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.45/cq-scaffold_darwin_amd64.zip"
+      sha256 "e41c00f198aa17f693569135bd6493b54f227722a276fce42528ab6cb5a3eba8"
 
       define_method(:install) do
         bin.install "cq-scaffold"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.44/cq-scaffold_darwin_arm64.zip"
-      sha256 "f2b5f461f8eb267c5bde616bc61a7f522f79391c88d7ec1f88e56bd41a534ca1"
+      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.45/cq-scaffold_darwin_arm64.zip"
+      sha256 "28c3348ca4b010b9a3b31a6d7e62db128b0f5bf17b70d440070bbf54e8bf75d7"
 
       define_method(:install) do
         bin.install "cq-scaffold"
@@ -28,15 +28,15 @@ class Scaffold < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.44/cq-scaffold_linux_amd64.zip"
-      sha256 "3b7af2c67be525124daa3ce9f206c6a88a8dba1f40e42215f2ec055b67dc0203"
+      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.45/cq-scaffold_linux_amd64.zip"
+      sha256 "614cca80c5e95f47419a15e880213f4bf4774ed8a31abc63f71b9bcb4fb0b679"
       define_method(:install) do
         bin.install "cq-scaffold"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.44/cq-scaffold_linux_arm64.zip"
-      sha256 "0e251f696c0375eaccb671fd77194ad4432b7b07d6eb5597870ea6844314c628"
+      url "https://github.com/cloudquery/cloudquery/releases/download/scaffold-v3.4.45/cq-scaffold_linux_arm64.zip"
+      sha256 "33dc2345552269979f215832a5f3391013cda8c76a8c4053dd25f93a4216c31d"
       define_method(:install) do
         bin.install "cq-scaffold"
       end
