@@ -5,12 +5,12 @@
 class Cloudquery < Formula
   desc "Easily monitor and ask questions about your infrastructure."
   homepage "https://cloudquery.io"
-  version "6.38.0"
+  version "6.39.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.38.0/cloudquery_darwin_amd64.zip"
-      sha256 "ae3c842cc17b20d8ac97d6d8a4d064456a1f1353c6b68317b3b9c07be97ca3f0"
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.39.0/cloudquery_darwin_amd64.zip"
+      sha256 "86e64d40b95329187dc02e5ad6e3deaa1d129a5a7d4e07e227b94f22e0032616"
 
       define_method(:install) do
         bin.install "cloudquery"
@@ -23,8 +23,8 @@ class Cloudquery < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.38.0/cloudquery_darwin_arm64.zip"
-      sha256 "f2de5b95497ab12277ba11351630c3cf6ab771d7b15f08acbb9049369ebfc534"
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.39.0/cloudquery_darwin_arm64.zip"
+      sha256 "4f4d339e93d184046924a7809b62ee38d56432c482467d60f6271311ba9cd60c"
 
       define_method(:install) do
         bin.install "cloudquery"
@@ -40,8 +40,8 @@ class Cloudquery < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.38.0/cloudquery_linux_amd64.zip"
-      sha256 "fdd613262c8b89ac0adc06f6ba44254fc09a076d44ca0723985c1cecb147f3e0"
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.39.0/cloudquery_linux_amd64.zip"
+      sha256 "c5c99f95e8841c991406075c1fe081b2f2d9d54e4417fac416502e2b6fee45f3"
       define_method(:install) do
         bin.install "cloudquery"
         output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "bash")
@@ -53,8 +53,8 @@ class Cloudquery < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.38.0/cloudquery_linux_arm64.zip"
-      sha256 "f6bbed5c67d56b724ea4b06121f99d1d947b041b50e093b93509281d16ad9933"
+      url "https://github.com/cloudquery/cloudquery/releases/download/cli-v6.39.0/cloudquery_linux_arm64.zip"
+      sha256 "3b29512b221ee6ea210111f45790c2bb80cfbb6de12e9e5d822953e30e02a37b"
       define_method(:install) do
         bin.install "cloudquery"
         output = Utils.safe_popen_read("#{bin}/cloudquery", "completion", "bash")
